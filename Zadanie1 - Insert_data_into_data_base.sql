@@ -1,3 +1,4 @@
+-- Исполнители
 INSERT INTO ispolniteli (imya_ispolnitelya) VALUES('Pink Floyd');
 INSERT INTO ispolniteli (imya_ispolnitelya) VALUES('Dire Straits');
 INSERT INTO ispolniteli (imya_ispolnitelya) VALUES('Led Zeppelin');
@@ -7,7 +8,7 @@ INSERT INTO ispolniteli (imya_ispolnitelya) VALUES('ПростоИсполнит
 INSERT INTO ispolniteli (imya_ispolnitelya) VALUES('RADIO TAPOK');
 INSERT INTO ispolniteli (imya_ispolnitelya) VALUES('Рэй Чарльз');
 
-
+-- Жанры   
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Hard Rock');
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Rock');
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Rock and Roll');
@@ -16,42 +17,42 @@ INSERT INTO ganry (nazvanie_ganra) VALUES ('Psychedelic rock');
 
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Progressive rock');
 
-# Альбомы
-# Pink Floyd
+-- Альбомы
+-- Pink Floyd
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('The Division Bell', 1994);
 
-# Pink Floyd
+-- Pink Floyd
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('The Wall', 1979);
 
 
-# Dire Straits
+-- Dire Straits
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Dire Straits', 1978);
 
-# The Doors
+-- The Doors
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('The Doors', 1970);
 
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Morrison Hotel', 1970);
 
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Live in Detroit', 2000);
 
-# Led Zeppelin
+-- Led Zeppelin
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('The Song Remains the Same', 1976);
 
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Physical Graffiti', 1975);
 
 
-# Deep Purlple
+-- Deep Purlple
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Machine Head', 1972);
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Deep Purple in Rock', 1970); 
 
-#  RADIO TAPOK
+--  RADIO TAPOK
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('Наследие', 2022);
 
-# Рэй Чарльз
+-- Рэй Чарльз
 INSERT INTO albomy (nazvanie_alboma, god_vypuska) VALUES ('The Genius Hits the Road', 1960);
 
-# Заполняем таблицу Исолнители <=> Альбомы
-# Pink Floyd
+-- Заполняем таблицу Исолнители <=> Альбомы
+-- Pink Floyd
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'The Division Bell'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Pink Floyd') );
@@ -60,12 +61,12 @@ INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'The Wall'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Pink Floyd') );
 
-# Dire Straits
+-- Dire Straits
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'Dire Straits'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Dire Straits') );
 
-# The Doors
+-- The Doors
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'The Doors'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'The Doors') );
@@ -78,7 +79,7 @@ INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'Live in Detroit'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'The Doors') );
 
-# Led Zeppelin
+--  Led Zeppelin
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'The Song Remains the Same'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Led Zeppelin') );
@@ -87,7 +88,7 @@ INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'Physical Graffiti'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Led Zeppelin') );
 
-# Deep Purlple
+--  Deep Purlple
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'Machine Head'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Deep Purlple') );
@@ -96,18 +97,18 @@ INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'Deep Purple in Rock'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Deep Purlple') );
 
-#  RADIO TAPOK
+--   RADIO TAPOK
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'Наследие'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'RADIO TAPOK') );
 
-# Рэй Чарльз
+--  Рэй Чарльз
 INSERT INTO ispolnitely_albomy (id_alboma, id_ispolnitelya)
 VALUES ((SELECT albomy.id_alboma FROM albomy WHERE albomy.nazvanie_alboma = 'The Genius Hits the Road'),
         (SELECT ispolniteli.id_ispolnitelya FROM ispolniteli WHERE ispolniteli.imya_ispolnitelya = 'Рэй Чарльз') );
 
-# Треки
-# Pink Floyd - The Division Bell
+--  Треки
+--  Pink Floyd - The Division Bell
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Cluster One', 358, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'The Division Bell')
 );
@@ -123,12 +124,12 @@ INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Lost for Words', 314, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'The Division Bell')
 );
 
-# Pink Floyd - The Wall
+--  Pink Floyd - The Wall
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'In the Flesh?', 191, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'The Wall')
 );
 
-# Dire Straits - Dire Straits
+--  Dire Straits - Dire Straits
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Down to the Waterline', 235, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Dire Straits')
 );
@@ -145,7 +146,7 @@ INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Six Blade Knife', 250, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Dire Straits')
 );
 
-# The Doors - The Doors
+--  The Doors - The Doors
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Roadhouse Blues ', 241, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'The Doors')
 );
@@ -175,7 +176,7 @@ INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Roadhouse Blues', 241, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Morrison Hotel')
 );
 
-# Led Zepprlin
+--  Led Zepprlin
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Rock and Roll', 243, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'The Song Remains the Same')
 );
@@ -192,7 +193,7 @@ INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Houses of the Holy', 243, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Physical Graffiti')
 );
 
-# Deep Purple
+--  Deep Purple
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Smoke On The Water', 340, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Machine Head')
 );
@@ -209,7 +210,7 @@ INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Child in Time', 617, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Deep Purple in Rock')
 );
 
-# RADIO TAPOK
+--  RADIO TAPOK
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Цусима', 259, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Наследие')
 );
@@ -222,7 +223,7 @@ INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Битва за Москву', 243, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'Наследие')
 );
 
-# Рэй Чарльз
+--  Рэй Чарльз
 INSERT INTO treki (nazvanie_treka, dlitelnost, id_alboma) VALUES (
 'Georgia On My Mind', 279, (SELECT id_alboma FROM albomy WHERE nazvanie_alboma = 'The Genius Hits the Road')
 );
@@ -236,7 +237,7 @@ INSERT INTO sborniki (nazvanie_sbornika, god_vypuska) VALUES ('Сборник 2'
 INSERT INTO sborniki (nazvanie_sbornika, god_vypuska) VALUES ('Сборник 3', 2020);
 INSERT INTO sborniki (nazvanie_sbornika, god_vypuska) VALUES ('Сборник 4', 2021);
 
-# Наполняем 'Сборник 1', в отором только треки исполнителя 'The Doors' 
+--  Наполняем 'Сборник 1', в отором только треки исполнителя 'The Doors' 
 
 INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
     (SELECT id_sbornika FROM sborniki WHERE nazvanie_sbornika='Сборник 1'),
@@ -264,7 +265,7 @@ SELECT id_treka FROM treki WHERE
     nazvanie_treka = 'Morrison Hotel';
 
 
-# Наполняем 'Сборник 2', в отором только треки исполнителя 'Dire Straits' 
+--  Наполняем 'Сборник 2', в отором только треки исполнителя 'Dire Straits' 
 
 INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
     (SELECT id_sbornika FROM sborniki WHERE nazvanie_sbornika='Сборник 2'),
@@ -288,7 +289,7 @@ INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
     );
 
 
-# Наполняем 'Сборник 3', в отором только треки исполнителя 'Led Zeppelin' 
+--  Наполняем 'Сборник 3', в отором только треки исполнителя 'Led Zeppelin' 
 
 INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
     (SELECT id_sbornika FROM sborniki WHERE nazvanie_sbornika='Сборник 3'),
@@ -318,8 +319,8 @@ INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
         nazvanie_treka = 'Houses of the Holy') 
     );
 
-# Наполняем 'Сборник 4', в отором только треки исполнителей 'Pink Floyd' и 'Deep Purple'
-# 'Сборник 4' - треки 'Pink Floyd'
+--  Наполняем 'Сборник 4', в отором только треки исполнителей 'Pink Floyd' и 'Deep Purple'
+--  'Сборник 4' - треки 'Pink Floyd'
 INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
     (SELECT id_sbornika FROM sborniki WHERE nazvanie_sbornika='Сборник 4'),
     (SELECT id_treka FROM treki WHERE 
@@ -348,7 +349,7 @@ INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
         nazvanie_treka = 'Houses of the Holy') 
     );
 
-# 'Сборник 4' - треки 'Deep Purple'
+--  'Сборник 4' - треки 'Deep Purple'
 INSERT INTO treki_sbornika (id_sbornika, id_treka) VALUES (
     (SELECT id_sbornika FROM sborniki WHERE nazvanie_sbornika='Сборник 4'),
     (SELECT id_treka FROM treki WHERE 
