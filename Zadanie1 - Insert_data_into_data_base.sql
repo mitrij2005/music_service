@@ -14,8 +14,44 @@ INSERT INTO ganry (nazvanie_ganra) VALUES ('Rock');
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Rock and Roll');
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Blues');
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Psychedelic rock'); 
+INSERT INTO ganry (nazvanie_ganra) VALUES ('Blues-rock'); 
 
 INSERT INTO ganry (nazvanie_ganra) VALUES ('Progressive rock');
+
+INSERT INTO ganry (nazvanie_ganra) VALUES ('Art rock'); 
+
+
+
+# Исполнители <=> Жанры
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'The Doors'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Psychedelic rock'));
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'The Doors'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Blues-rock'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'The Doors'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Progressive rock'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'Pink Floyd'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Art rock'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'Pink Floyd'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Psychedelic rock'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'Pink Floyd'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Rock and Roll'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'Dire Straits'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Rock and Roll'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'Led Zeppelin'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Hard Rock'));
+
+INSERT INTO ispolnitely_ganry (id_ispolnitelya, id_ganra) 
+VALUES ((SELECT id_ispolnitelya FROM ispolniteli WHERE imya_ispolnitelya = 'Deep Purlple'), (SELECT id_ganra FROM ganry WHERE nazvanie_ganra = 'Hard Rock'));
+
+
+
+
 
 -- Альбомы
 -- Pink Floyd

@@ -50,7 +50,7 @@ COMMENT ON COLUMN ispolnitely_ganry.id_ganra IS 'ID_Жанра';
 CREATE TABLE IF NOT EXISTS albomy(
     id_alboma SERIAL NOT NULL,
     nazvanie_alboma varchar(255) NOT NULL,
-    god_vypuska date NOT NULL,
+    god_vypuska integer NOT NULL,
     PRIMARY KEY(id_alboma)
 );
 COMMENT ON TABLE albomy IS 'Музыкальные сервисы';
@@ -61,7 +61,7 @@ COMMENT ON COLUMN albomy.god_vypuska IS 'Год выпуска';
 CREATE TABLE IF NOT EXISTS sborniki(
     id_sbornika SERIAL NOT NULL,
     nazvanie_sbornika varchar(255) NOT NULL,
-    god_vypuska date NOT NULL,
+    god_vypuska integer NOT NULL,
     PRIMARY KEY(id_sbornika)
 );
 COMMENT ON TABLE sborniki IS 'Сборники';
